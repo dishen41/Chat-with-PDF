@@ -18,7 +18,7 @@ function App() {
       const formData = new FormData();
       formData.append('file', file);
       
-      const uploadRes = await fetch('http://127.0.0.1:8080/upload/', { method: 'POST', body: formData });
+      const uploadRes = await fetch('https://dishen41-try-5.hf.space/upload/', { method: 'POST', body: formData });
       if (!uploadRes.ok) throw new Error(`Upload server error: ${uploadRes.status}`);
       
       const uploadData = await uploadRes.json();
@@ -54,7 +54,7 @@ function App() {
     try {
       const askFormData = new FormData();
       askFormData.append("question", text);
-      const res = await fetch('http://127.0.0.1:8080/ask/', { 
+      const res = await fetch('https://dishen41-try-5.hf.space/ask/', { 
         method: 'POST', 
         body: askFormData
       });
