@@ -34,7 +34,7 @@ export default function ChatPane({ messages, onSendMessage, isTyping }) {
       <div className="absolute top-0 right-0 w-96 h-96 bg-neon-cyan opacity-10 blur-[150px] rounded-full pointer-events-none"></div>
 
       {/* Header */}
-      <div className="h-16 border-b border-white/5 flex items-center justify-between px-8 bg-dark-pane/50 backdrop-blur-sm z-10 shrink-0">
+      <div className="h-16 border-b border-white/5 flex items-center justify-between px-4 md:px-8 bg-dark-pane/50 backdrop-blur-sm z-10 shrink-0">
         <h2 className="text-lg font-semibold tracking-wider text-slate-200 flex items-center gap-2">
           <Cpu className="w-5 h-5 text-neon-violet" />
           NEURAL CHAT
@@ -52,7 +52,7 @@ export default function ChatPane({ messages, onSendMessage, isTyping }) {
       </div>
 
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto p-8 space-y-6 z-10 custom-scrollbar">
+      <div className="flex-1 overflow-y-auto p-4 md:p-8 space-y-4 md:space-y-6 z-10 custom-scrollbar">
         <AnimatePresence>
           {messages.map((m, idx) => (
             <motion.div
@@ -72,7 +72,7 @@ export default function ChatPane({ messages, onSendMessage, isTyping }) {
                 {m.role === 'user' ? <User className="w-4 h-4" /> : <Cpu className="w-4 h-4" />}
               </div>
               <div className={clsx(
-                "px-5 py-3.5 rounded-2xl text-sm leading-relaxed",
+                "px-4 md:px-5 py-3 md:py-3.5 rounded-2xl text-sm leading-relaxed",
                 m.role === 'user' 
                   ? "bg-slate-800/80 text-slate-200 border border-slate-700/50 backdrop-blur-sm"
                   : "bg-slate-900/60 text-slate-300 border border-neon-violet/20 shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
@@ -117,7 +117,7 @@ export default function ChatPane({ messages, onSendMessage, isTyping }) {
       </div>
 
       {/* Input Area */}
-      <div className="p-8 bg-dark-pane/30 backdrop-blur-md border-t border-white/5 z-10 shrink-0">
+      <div className="p-4 md:p-8 bg-dark-pane/30 backdrop-blur-md border-t border-white/5 z-10 shrink-0">
         {/* Suggestions */}
         <div className="flex gap-3 mb-4 overflow-x-auto custom-scrollbar pb-2">
           {suggestions.map((s, i) => (
@@ -141,7 +141,7 @@ export default function ChatPane({ messages, onSendMessage, isTyping }) {
             value={inputVal}
             onChange={e => setInputVal(e.target.value)}
             placeholder="Transmit inquiry to neural network..."
-            className="w-full bg-slate-900 border border-slate-700 rounded-xl pl-5 pr-14 py-4 text-sm text-slate-200 focus:outline-none focus:border-neon-violet focus:ring-1 focus:ring-neon-violet transition-all shadow-[inset_0_2px_10px_rgba(0,0,0,0.2)]"
+            className="w-full bg-slate-900 border border-slate-700 rounded-xl pl-4 md:pl-5 pr-12 md:pr-14 py-3 md:py-4 text-sm text-slate-200 focus:outline-none focus:border-neon-violet focus:ring-1 focus:ring-neon-violet transition-all shadow-[inset_0_2px_10px_rgba(0,0,0,0.2)]"
           />
           <button
             type="submit"

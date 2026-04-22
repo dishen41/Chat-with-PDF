@@ -34,7 +34,7 @@ export default function UploadPane({ onUploadProgress, uploadState, uploadedFile
   };
 
   return (
-    <div className="flex flex-col h-full bg-dark-pane p-8 border-r border-[#1e293b] shadow-[0_0_50px_rgba(0,0,0,0.5)] relative overflow-hidden">
+    <div className="flex flex-col min-h-full bg-dark-pane p-4 md:p-8 border-b md:border-b-0 md:border-r border-[#1e293b] shadow-[0_0_50px_rgba(0,0,0,0.5)] relative overflow-hidden">
       <div className="absolute -top-32 -left-32 w-64 h-64 bg-neon-violet opacity-20 blur-[100px] rounded-full pointer-events-none"></div>
       
       <div className="flex-1 flex flex-col justify-center items-center relative z-10">
@@ -65,7 +65,7 @@ export default function UploadPane({ onUploadProgress, uploadState, uploadedFile
 
         {uploadState === 'idle' && (
           <motion.div
-            className={`w-full max-w-sm rounded-3xl border-2 border-dashed flex flex-col items-center justify-center p-8 transition-colors ${
+            className={`w-full max-w-sm rounded-3xl border-2 border-dashed flex flex-col items-center justify-center p-6 md:p-8 transition-colors ${
               isHovered ? 'border-neon-cyan bg-neon-cyan/5' : 'border-slate-700 bg-slate-900/50'
             } backdrop-blur-md`}
             onDrop={handleDrop}

@@ -78,7 +78,7 @@ function App() {
 
   return (
     <div className="w-full h-screen flex flex-col md:flex-row overflow-hidden font-sans bg-dark-bg text-slate-200">
-      <div className="w-full md:w-1/3 min-w-[320px] max-w-[450px] z-10 shrink-0">
+      <div className="w-full md:w-1/3 md:min-w-[320px] md:max-w-[450px] z-10 shrink-0 max-h-[40vh] md:max-h-none overflow-y-auto md:overflow-visible">
         <UploadPane 
           onUploadProgress={handleUploadProgress} 
           uploadState={uploadState} 
